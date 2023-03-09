@@ -1,3 +1,8 @@
+//autor: Giovanni Cifuentes
+//carné: 9959-22-1822
+//serie 3
+//fecha de creacion: 08/03/2023
+
 #ifndef ENCABEZADOPARCIAL_H
 #define ENCABEZADOPARCIAL_H
 #include <iostream>
