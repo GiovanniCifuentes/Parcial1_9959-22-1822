@@ -16,7 +16,7 @@ const int NUMERO_EMPRESAS = 5;
 const int NUMERO_FECHAS = 4;
 const int MAX_CALIFICACION = 1000000;
 const int MIN_CALIFICACION = 0;
-const int MAX_LONGITUD_CADENA = 50;
+const int MAX_LONGITUD_CADENA = 100;
 
 int busquedaAleatorios(int minimo, int maximo);
 void llenarMatriz(float matriz1[NUMERO_EMPRESAS][NUMERO_FECHAS+1]);

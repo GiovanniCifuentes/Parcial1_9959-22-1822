@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1678329581 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\prototipop11p2023\main.cpp
+	<iostream>
+	<stdio.h>
+	<iostream>
+	<cstdlib>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<string.h>
+	<iomanip>
+	"encabezadoParcial.h"
+
+1678394992 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\prototipop11p2023\include\encabezadoparcial.h
+	<iostream>
+	<stdio.h>
+	<iostream>
+	<cstdlib>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<string.h>
+	<iomanip>
+
+1678395045 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\prototipop11p2023\src\encabezadoparcial.cpp
+	"encabezadoParcial.h"
+	<iostream>
+	<stdio.h>
+	<iostream>
+	<cstdlib>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<string.h>
+	<iomanip>
+

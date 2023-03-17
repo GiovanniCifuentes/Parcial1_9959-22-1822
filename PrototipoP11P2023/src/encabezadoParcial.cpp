@@ -102,10 +102,10 @@ void imprimirMatriz1(float matriz1[NUMERO_EMPRESAS][NUMERO_FECHAS+1], char camar
             montoMayor = monto;
             memcpy(MontoMayor, camara1[y], MAX_LONGITUD_CADENA);
         }
-        if (monto < montoMayor)
+        if (monto < montoMenor)
         {
-            montoMayor = monto;
-            memcpy(MontoMayor, camara1[y], MAX_LONGITUD_CADENA);
+            montoMenor = monto;
+            memcpy(MontoMenor, camara1[y], MAX_LONGITUD_CADENA);
         }
         cout<<"\t"<< fixed << setprecision(2)<< (double) monto<<"  |\n";
         imprimirLineaMatriz();
@@ -145,10 +145,10 @@ void imprimirMatriz2(float matriz2[NUMERO_EMPRESAS][NUMERO_FECHAS+1], char camar
             montoMayor = monto;
             memcpy(MontoMayor, camara2[y], MAX_LONGITUD_CADENA);
         }
-        if (monto < montoMayor)
+        if (monto < montoMenor)
         {
-            montoMayor = monto;
-            memcpy(MontoMayor, camara2[y], MAX_LONGITUD_CADENA);
+            montoMenor = monto;
+            memcpy(MontoMenor, camara2[y], MAX_LONGITUD_CADENA);
         }
         cout<<"\t"<< fixed << setprecision(2)<< (double) monto<<"  |\n";
         imprimirLineaMatriz();
@@ -188,10 +188,10 @@ void imprimirMatriz3(float matriz3[NUMERO_EMPRESAS][NUMERO_FECHAS+1], char camar
             montoMayor = monto;
             memcpy(MontoMayor, camara3[y], MAX_LONGITUD_CADENA);
         }
-        if (monto < montoMayor)
+        if (monto < montoMenor)
         {
-            montoMayor = monto;
-            memcpy(MontoMayor, camara3[y], MAX_LONGITUD_CADENA);
+            montoMenor = monto;
+            memcpy(MontoMenor, camara3[y], MAX_LONGITUD_CADENA);
         }
         cout<<"\t"<< fixed << setprecision(2)<< (double) monto<<"  |\n";
         imprimirLineaMatriz();
