@@ -3,28 +3,27 @@
 #include <ctime>
 #include "Juego.h"
 #include "Config.h"
-#include "Jugador.h"
 #include "persona.h"
 
 using namespace std;
 
 int main()
 {
-    // Definición de constantes que se utilizarán en el juego
+    // DefiniciÃ³n de constantes que se utilizarÃ¡n en el juego
     const int FILASTABLERO = 5;
     const int COLUMNASTABLERO = 5;
     const int MINASENTABLERO = 3;
     const bool MODODESARROLLADOR = true;
     const int VIDASTABLERO = 3;
 
-    // Creación de un objeto Config para almacenar la configuración del juego
+    // CreaciÃ³n de un objeto Config para almacenar la configuraciÃ³n del juego
     Config configuracionJuego(FILASTABLERO, COLUMNASTABLERO, MINASENTABLERO, MODODESARROLLADOR, VIDASTABLERO);
-    Juego juego(Tablero(configuracionJuego.getfilasTablero(), configuracionJuego.getcolumnasTablero(), configuracionJuego.getmodoDesarrolladorTablero()), configuracionJuego.getminasTablero());
+    Juego juego(Tablero(configuracionJuego.getfilasTablero(), configuracionJuego.getcolumnasTablero(), configuracionJuego.getmodoDesarrolladorTablero()), configuracionJuego.getminasTablero(), configuracionJuego.getvidasTablero());
     juego.dibujarPortada("portada.txt");
-    // Inicialización de la semilla de generación de números aleatorios
+    // InicializaciÃ³n de la semilla de generaciÃ³n de nÃºmeros aleatorios
     srand(getpid());
 
-    // Variables para almacenar la selección del usuario y controlar el flujo del menú
+    // Variables para almacenar la selecciÃ³n del usuario y controlar el flujo del menÃº
     int opciones;
     bool repetir = true;
 
@@ -33,31 +32,33 @@ int main()
         // Limpia la pantalla
         system("cls");
 
-        // Muestra el menú
+        // Muestra el menÃº
         cout << "\n\n\t\tBUSCA MINAS -Menu-" << endl;
         cout << "\t\t---------------------" << endl;
-        cout << "\t\t1. Ingreso de Resgistro de Jugador" << endl;
+        cout << "\t\t1. Ingreso de Registro de Jugador" << endl;
         cout << "\t\t2. Configuracion del Juego" << endl;
         cout << "\t\t3. Iniciar el juego" << endl;
-        cout << "\t\t4. Salir del Menu" << endl;
+        cout << "\t\t4. Scores Guardados" << endl;
+        cout << "\t\t5. Salir del Menu" << endl;
         cout << "\n\t\tIngrese una opcion: ";
 
-        // Lee la selección del usuario5
+        // Lee la selecciÃ³n del usuario5
         cin >> opciones;
 
-        // Ejecuta la acción correspondiente según la selección del usuario
+        // Ejecuta la acciÃ³n correspondiente segÃºn la selecciÃ³n del usuario
         switch (opciones)
         {
         case 1:
             {
                 string id,name,fecha;
-                persona estudiante(id,name,fecha);
+                int tiempo, score;
+                persona estudiante(id,name,fecha, tiempo, score);
                 estudiante.menu();
                 break;
             }
         case 2:
             {
-                // Abre el menú de configuración y actualiza la configuración del juego
+                // Abre el menÃº de configuraciÃ³n y actualiza la configuraciÃ³n del juego
                 configuracionJuego.menuConfiguracion();
                 break;
             }
@@ -67,25 +68,30 @@ int main()
                 cout << "CARGANDO NUEVO TABLERO..." << endl;
                 sleep(2);
                 system("cls");
+                // Crea un objeto Juego con el tablero, el nÃºmero de minas y el nÃºmero de vidas especificados en la configuraciÃ³n del juego
+                Juego juegoTemporal(Tablero(configuracionJuego.getfilasTablero(), configuracionJuego.getcolumnasTablero(), configuracionJuego.getmodoDesarrolladorTablero()), configuracionJuego.getminasTablero(), configuracionJuego.getvidasTablero());
 
-                // Crea un objeto Juego con el tablero y el número de minas especificados en la configuración del juego
-                Juego juegoTemporal(Tablero(configuracionJuego.getfilasTablero(), configuracionJuego.getcolumnasTablero(), configuracionJuego.getmodoDesarrolladorTablero()), configuracionJuego.getminasTablero());
+                //Jugador jugadorActivo(configuracionJuego.getvidasTablero());
+                //jugadorActivo.obtenerVida();
 
-                Jugador jugadorActivo(configuracionJuego.getvidasTablero());
-                jugadorActivo.obtenerVida();
 
-                time_t tiempoInicio = time(NULL);
                 // Inicia el juego
                 juegoTemporal.iniciar();
-                time_t tiempoFin = time(NULL);
-                int tiempoTranscurrido = difftime(tiempoFin, tiempoInicio);
-                cout << "\nTIEMPO OBTENIDO: " << tiempoTranscurrido << " segundos\n" << endl;
 
-                // Pausa la ejecución del programa para que el usuario pueda ver los resultados
+
+                // Pausa la ejecuciÃ³n del programa para que el usuario pueda ver los resultados
                 system("pause");
                 break;
             }
         case 4:
+            {
+                string id,name,fecha;
+                int tiempo, score;
+                persona estudiante(id,name,fecha, tiempo, score);
+                estudiante.menu1();
+                break;
+            }
+        case 5:
             repetir = false;
             break;
         }
@@ -95,4 +101,5 @@ int main()
     // Indica que el programa se ha ejecutado correctamente
     return 0;
 }
+
 

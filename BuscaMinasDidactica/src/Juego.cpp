@@ -1,7 +1,7 @@
 #include "Juego.h"
-#include "Jugador.h"
 #include "Config.h"
 #include "Tablero.h"
+#include "persona.h"
 #include <fstream>
 #include <unistd.h>
 
@@ -20,10 +20,11 @@ int Juego::aleatorio_en_rango(int minimo, int maximo)
 		return this->aleatorio_en_rango(0, this->tablero.getAnchoTablero() - 1);
 	}
 
-	Juego::Juego(Tablero tablero, int cantidadMinas)
+	Juego::Juego(Tablero tablero, int cantidadMinas, int vidasTablero)
 	{
 		this->tablero = tablero;
 		this->cantidadMinas = cantidadMinas;
+		this->vidasTablero = vidasTablero;
 		this->colocarMinasAleatoriamente();
 	}
 
@@ -73,45 +74,57 @@ int Juego::aleatorio_en_rango(int minimo, int maximo)
 
 	void Juego::iniciar()
 	{
-	    const int FILASTABLERO = 5;
-        const int COLUMNASTABLERO = 5;
-        const int MINASENTABLERO = 3;
-        const bool MODODESARROLLADOR = true;
-        const int VIDASTABLERO = 3;
-
-        Config configuracionJuego(FILASTABLERO, COLUMNASTABLERO, MINASENTABLERO, MODODESARROLLADOR, VIDASTABLERO);
-         Juego juego(Tablero(configuracionJuego.getfilasTablero(), configuracionJuego.getcolumnasTablero(), configuracionJuego.getmodoDesarrolladorTablero()), configuracionJuego.getminasTablero());
-			    Jugador jugadorActivo(configuracionJuego.getvidasTablero());
-
-		int fila, columna, vidasRestantes;
-
-
+        system("cls");// Limpia la pantalla
+		int fila, columna;
+		string id,name,fecha;
+		int tiempo;
+		int score = 0;
+        persona estudiante(id,name,fecha, tiempo, score);
+        estudiante.buscar1();
+        time_t tiempoInicio = time(NULL);
 		while (true)
 		{
+			cout << "VIDAS: " << vidasTablero << endl;//Imprime las vidas restantes del jugador en pantalla
+			cout << "SCORE: " << score << endl;
 			this->tablero.imprimir();
 			fila = this->solicitarFilaUsuario();
 			columna = this->solicitarColumnaUsuario();
 			bool respuestaAUsuario = this->tablero.descubrirMina(columna, fila);
+			if (respuestaAUsuario)
+			{
+			    score += 5;
+			}
 			if (!respuestaAUsuario)
 			{
-			    vidasRestantes = jugadorActivo.disminuirVida();
-                cout << "Perdiste una vida, Tienes: " << vidasRestantes << endl;
+			    score -= 5;
+			    vidasTablero--;//Reduce en 1 las vidas ddel jugador
 			}
-			if(vidasRestantes == 0)
+			if (vidasTablero == 0)//Si las vidas llegan a 0, el jugador pierde el juego
 			{
+			    system("cls");// Limpia la pantalla
                 cout << "\nPERDISTE EL JUEGO!!!!!!!!!\n";
                 cout << "\nESFUERZATE MAS PARA LA PROXIMA!!!!!!!!\n";
                 cout << "\nTe mostramos donde estaban las minas\n";
 				this->tablero.setModoDesarrollador(true);
 				this->tablero.imprimir();
+				time_t tiempoFin = time(NULL);
+                int tiempoTranscurrido = difftime(tiempoFin, tiempoInicio);
+                cout << "\nTIEMPO OBTENIDO: " << tiempoTranscurrido << " segundos\n" << endl;
+                cout << "\nPUNTUACION FINAL: " << score << " puntos\n" << endl;
+                string id,name,fecha;
+                persona estudiante(id,name,fecha, tiempoTranscurrido, score);
+                estudiante.ingresoTiempo();
 				break;
 			}
 
 			if (this->jugadorGana())
 			{
+			    system("cls");// Limpia la pantalla
 				cout << "Ganaste el Juego\n";
 				this->tablero.setModoDesarrollador(true);
 				this->tablero.imprimir();
+				cout << "\nPUNTUACION FINAL: " << score << " puntos\n" << endl;
+                estudiante.ingresoTiempo();
 				break;
 			}
 		}

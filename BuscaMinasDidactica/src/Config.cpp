@@ -1,7 +1,7 @@
 #include <iostream>
 #include <unistd.h>
 #include "Config.h"
-#include "Jugador.h"
+
 
 using namespace std;
 

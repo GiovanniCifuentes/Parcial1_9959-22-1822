@@ -59,15 +59,15 @@
 
 1680539865 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\include\celda.h
 
-1680578660 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\src\juego.cpp
+1681522554 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\src\juego.cpp
 	"Juego.h"
-	"Jugador.h"
 	"Config.h"
 	"Tablero.h"
+	"persona.h"
 	<fstream>
 	<unistd.h>
 
-1680575215 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\include\juego.h
+1681340543 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\include\juego.h
 	"Tablero.h"
 
 1680567168 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\include\tablero.h
@@ -82,32 +82,29 @@
 	<sstream>
 	<iostream>
 
-1680566151 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\src\config.cpp
+1681347991 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\src\config.cpp
 	<iostream>
 	<unistd.h>
 	"Config.h"
-	"Jugador.h"
 
-1680569885 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\include\config.h
-	"Jugador.h"
+1681347991 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\include\config.h
 
-1680663461 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\main.cpp
+1681347991 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\main.cpp
 	<iostream>
 	<unistd.h>
 	<ctime>
 	"Juego.h"
 	"Config.h"
-	"Jugador.h"
 	"persona.h"
 
 1680576737 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\include\jugador.h
 	"Config.h"
 
-1680577072 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\src\jugador.cpp
+1681081743 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\src\jugador.cpp
 	"Jugador.h"
 	<iostream>
 
-1680662455 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\include\persona.h
+1681346933 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\include\persona.h
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -115,7 +112,7 @@
 	<conio.h>
 	<iomanip>
 
-1680663395 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\src\persona.cpp
+1681347782 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\buscaminasdidactica\src\persona.cpp
 	"persona.h"
 	<iostream>
 	<fstream>
