@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1681428479 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\proyectoplantilla\plantillasueldo\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	"datos.h"
+	"Usuario.h"
+
+1681769832 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\proyectoplantilla\plantillasueldo\include\datos.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1681430396 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\proyectoplantilla\plantillasueldo\src\datos.cpp
+	"datos.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1681768305 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\proyectoplantilla\plantillasueldo\src\usuario.cpp
+	"usuario.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1681767269 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\tareasp1_9959-22-1822\proyectoplantilla\plantillasueldo\include\usuario.h
+	<iostream>
+	<fstream>
+	<string>
+
