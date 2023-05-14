@@ -28,7 +28,7 @@ int main() {
     Usuario ingreso(usuario, contrasena);
     bool usuarioCorrecto = ingreso.verificarUsuario();
 
-    //if (usuarioCorrecto) {
+    if (usuarioCorrecto) {
     int choice;
 	char x;
 	do

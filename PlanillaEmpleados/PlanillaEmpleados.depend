@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1683777025 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\ejercicios\robotjuego\planillaempleados\src\usuarios.cpp
+	"Usuarios.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1683762689 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\ejercicios\robotjuego\planillaempleados\include\usuarios.h
+	<iostream>
+	<fstream>
+	<string>
+
+1683776678 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\ejercicios\robotjuego\planillaempleados\src\bitacora.cpp
+	"bitacora.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1683773802 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\ejercicios\robotjuego\planillaempleados\include\bitacora.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1683777647 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\ejercicios\robotjuego\planillaempleados\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	"datos.h"
+	"Usuarios.h"
+	"bitacora.h"
+
+1683763117 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\ejercicios\robotjuego\planillaempleados\include\datos.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1683776688 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\ejercicios\robotjuego\planillaempleados\src\datos.cpp
+	"datos.h"
+	"Usuarios.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+

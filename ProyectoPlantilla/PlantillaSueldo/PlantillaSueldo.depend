@@ -23,3 +23,27 @@
 	<conio.h>
 	<iomanip>
 
+1681262650 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\proyectoplantilla\plantillasueldo\main.cpp
+	<iostream>
+	<conio.h>
+	<cstdlib>
+	<vector>
+	"datos.h"
+
+1681262650 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\proyectoplantilla\plantillasueldo\include\datos.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1681264166 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\proyectoplantilla\plantillasueldo\src\datos.cpp
+	"datos.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
