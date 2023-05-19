@@ -1,4 +1,6 @@
 #include "Usuarios.h"
+#include "bitacora.h"
+
 #include<iostream>
 #include<fstream>
 #include<stdlib.h>
@@ -6,43 +8,36 @@
 #include<conio.h>
 #include<iomanip>
 
-Usuario::Usuario(string usuario, string contrasena) // Se define el constructor de la clase Usuario, que recibe como parámetros un usuario y una contraseña
+Usuario::Usuario()
 {
-    this->usuario=usuario; // Se asigna el valor del parámetro usuario al atributo usuario de la clase
-    this->contrasena=contrasena; // Se asigna el valor del parámetro contrasena al atributo contrasena de la clase
 }
 
-string Usuario::setUusuario(string usuario) { // Se define el método setUsuario, que recibe como parámetro un usuario
-    this->usuario = usuario; // Se asigna el valor del parámetro usuario al atributo usuario de la clase
+string Usuario::setUusuario(string nombre) { // Se define el método setUsuario, que recibe como parámetro un usuario
+    usuario=nombre; // Se asigna el valor del parámetro usuario al atributo usuario de la clase
 }
 
 string Usuario::getUusuario() { // Se define el método getUsuario
-    return this->usuario; // Se devuelve el valor del atributo usuario de la clase
+    return usuario;
+    // Se devuelve el valor del atributo usuario de la clase
 }
 
-string Usuario::setContrasena(string contrasena) { // Se define el método setContrasena, que recibe como parámetro una contraseña
-    this->contrasena = contrasena; // Se asigna el valor del parámetro contrasena al atributo contrasena de la clase
+string Usuario::setContrasena(string pass) { // Se define el método setContrasena, que recibe como parámetro una contraseña
+    pass = contrasena; // Se asigna el valor del parámetro contrasena al atributo contrasena de la clase
 }
 
-string Usuario::getSontrasena(){ // Se define el método getContrasena
-    return this->contrasena; // Se devuelve el valor del atributo contrasena de la clase
+string Usuario::getContrasena(){ // Se define el método getContrasena
+    return contrasena; // Se devuelve el valor del atributo contrasena de la clase
 }
+
 
 void Usuario::menuUsuarios(){
     int choice; // Se declara la variable choice para almacenar la opción elegida por el usuario
 	char x; // Se declara la variable x para almacenar la respuesta del usuario al preguntar si quiere agregar otra persona
 	bool repetir = true; // Se inicializa la variable repetir en true
-
-    fstream file2;
-    file2.open("Bitacora.txt", ios::app | ios::out);
-
-    int accion9 = 7010;
-    int accion10 = 7020;
-
+	bitacora metodoAccion;
 	do
     {
 	system("cls"); // Se limpia la pantalla
-
     cout <<"\t\t\t------------------------------"<<endl; // Se imprime un mensaje de bienvenida al menú de usuarios
     cout <<"\t\t\t |MENU DE PROCESO DE USUARIOS|"<<endl;
     cout <<"\t\t\t------------------------------"<<endl;
@@ -60,12 +55,12 @@ void Usuario::menuUsuarios(){
     {
     case 1:
 		modificarUsuarios(); // Se llama al método para modificar usuarios
-		file2<<"\t\t\tAccion: Modifico Un Usuario - " <<accion9<<"\n"<<endl;
+		metodoAccion.insertarAccion("7010", "UPD USUARIOS");
 		break;
 	case 2:
 		borrarUsurios(); // Se llama al método para borrar usuarios
-		file2<<"\t\t\tAccion: Borro a un usuario - " <<accion10<<endl;
-		file2<<"\t\t\tUsuario Borrado: " <<usuario<<"\n"<<endl;
+
+		metodoAccion.insertarAccion("7020", "DEL USUARIOS");
 		break;
 	case 3:
 	    repetir=false; // Se cambia el valor de repetir a false para salir del menú
@@ -75,7 +70,6 @@ void Usuario::menuUsuarios(){
 	}
 	getch(); // Se espera a que el usuario presione una tecla para continuar
     }while(choice!= 3); // Se repite el ciclo mientras la opción elegida por el usuario sea diferente a 6 (salida del menú)
-    file2.close();
 }
 
 void Usuario::ingresarUsuarios(){
@@ -355,6 +349,7 @@ while (contador < 3 && !encontrado) {
 
 // Si se encontró el usuario, se retorna true
 if (encontrado) {
+    usuarioAutenticado = usuario;
     fstream file2;
     // Obtiene el tiempo actual
     time_t tiempoActual = time(0);
@@ -392,4 +387,7 @@ if (encontrado) {
 	file2.close();
     return false;
 }
+}
+string Usuario::getUsuarioAutenticado() {
+    return usuarioAutenticado;
 }

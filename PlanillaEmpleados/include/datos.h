@@ -76,7 +76,7 @@ class datos
 
 		void insertar(); // La funci�n insertar() permite al usuario ingresar informaci�n para crear un nuevo registro y lo guarda en un archivo.
 		void desplegar(); // La funci�n desplegar() lee y muestra todos los registros almacenados en el archivo.
-		void modificar(); // La funci�n modificar() permite al usuario seleccionar un registro por ID y modificar su informaci�n.
+		void modificar(int id); // La funci�n modificar() permite al usuario seleccionar un registro por ID y modificar su informaci�n.
 		void buscar(); // La funci�n buscar() permite al usuario buscar un registro por ID y mostrar su informaci�n.
 		void borrar(); // La funci�n borrar() permite al usuario eliminar un registro por ID.
 		void imprimirLinea(); // La funci�n imprimirLinea() imprime una l�nea de caracteres en consola para mejorar la legibilidad del men� y los resultados.
@@ -92,6 +92,8 @@ class datos
 		void insertarDatosDepartamento();
 
 		void menuProcesosEmpleado();
+
+		string getIdEncontrado();
 
 
 
@@ -114,6 +116,7 @@ class datos
         float irtra = 75; // Monto fijo de contribuci�n al IRTRA
         float total_percepciones; // Total de percepciones, incluyendo sueldo, comisiones, horas extra, etc.
         float bonificacionIncentiva = 250;  // Monto fijo de bonificaci�n incentivada, que se suma a las percepciones totales
+        string idEncontrado;
 
 };
 

@@ -1,5 +1,6 @@
 #include "datos.h"
 #include "Usuarios.h"
+#include "bitacora.h"
 
 #include<iostream>
 #include<fstream>
@@ -9,6 +10,7 @@
 #include<iomanip>
 
 using namespace std;
+
 
 datos::datos(int id, string nombre, string apellido, string genero, string puesto, string departamento, int dia, int mes, int dpi, int telefono, int telefono1, int numCuenta, float sueldo, float comisiones, float percepciones_extra, float horas_extra, float isr)
 {
@@ -157,16 +159,7 @@ void datos::menuDatos()
 {
     bool salir = false;
     int choice;
-
-    fstream file2;
-    file2.open("Bitacora.txt", ios::app | ios::out);
-
-    int accion0 = 7001;
-    int accion1 = 7002;
-    int accion2 = 7003;
-    int accion3 = 7004;
-    int accion4 = 7005;
-
+    bitacora metodoAccion;
 	do
     {
 	system("cls");
@@ -191,23 +184,22 @@ void datos::menuDatos()
     {
     case 1:
 		menuDatosEmpleado();
-		file2<<"\t\t\tAccion: Ingreso Datos del Empleado - " <<accion0<<"\n"<<endl;
 		break;
     case 2:
 		insertarPercepciones();
-		file2<<"\t\t\tAccion: Ingreso Percepciones - " <<accion1<<"\n"<<endl;
+		metodoAccion.insertarAccion("7002", "INGRE. PERCEPCIONES");
 		break;
 	case 3:
 		insertarHorasExtras();
-		file2<<"\t\t\tAccion: Ingreso Horas Extras - " <<accion2<<"\n"<<endl;
+		metodoAccion.insertarAccion("7003", "INGRE. HORAS EXTRAS");
 		break;
 	case 4:
 		insertarDeducciones();
-		file2<<"\t\t\tAccion: Ingreso Deducciones - " <<accion3<<"\n"<<endl;
+		metodoAccion.insertarAccion("7004", "INGRE. DEDUCCIONES");
 		break;
     case 5:
 		insertar();
-		file2<<"\t\t\tAccion: Ingreso Todos los Datos - " <<accion4<<"\n"<<endl;
+		metodoAccion.insertarAccion("7005", "INS PLANILLA");
 		break;
 	case 6:
 		salir = true;
@@ -216,7 +208,7 @@ void datos::menuDatos()
 	}
 	getch();
     }while(choice!= 6);
-    file2.close();
+
 }
 void datos::menuDatosEmpleado()
 {
@@ -258,9 +250,12 @@ void datos::menuDatosEmpleado()
 	}
 	getch();
     }while(choice!= 4);
+    bitacora metodoAccion;
+    metodoAccion.insertarAccion("7001", "INGRE. DATOS EMPLEADOS");
 }
 void datos::insertarDatos()
 {
+    idEncontrado=id;
 	system("cls");
 	cout<<"\n------------------------------------------------------------------------------------------------------------------------";
 	cout<<"\n-------------------------------------------------Agregar Datos Personales ---------------------------------------------"<<endl;
@@ -410,15 +405,9 @@ void datos::insertar()
 }
 void datos::menuProcesosEmpleado()
 {
-    fstream file2;
-    file2.open("Bitacora.txt", ios::app | ios::out);
-
-    int accion6 = 7007;
-    int accion7 = 7008;
-    int accion8 = 7009;
-
     bool salir = false;
     int choice;
+    bitacora metodoAccion;
 	do
     {
 	system("cls");
@@ -440,17 +429,16 @@ void datos::menuProcesosEmpleado()
     switch(choice)
     {
     case 1:
-		modificar();
-		file2<<"\t\t\tAccion: Modifico Datos del Empleado - " <<accion6<<"\n"<<endl;
+		modificar(id);
+		metodoAccion.insertarAccion("7007", "UPD PLANILLA");
 		break;
 	case 2:
 		buscar();
-		file2<<"\t\t\tAccion: Busco a un Empleado - " <<accion7<<"\n"<<endl;
+		metodoAccion.insertarAccion("7008", "SEL PLANILLA");
 		break;
 	case 3:
 		borrar();
-		file2<<"\t\t\tAccion: Borro a un Empleado -  "<<accion8<<endl;
-		file2<<"\t\t\tId Empleado Borrado: " <<id<<"\n"<<endl;
+		metodoAccion.insertarAccion("7009", "DEL DATOS PLANILLA");
 		break;
     case 4:
 		salir = true;
@@ -459,7 +447,6 @@ void datos::menuProcesosEmpleado()
 	}
 	getch();
     }while(choice!= 4);
-    file2.close();
 }
 void datos::desplegar()
 {
@@ -477,25 +464,70 @@ void datos::desplegar()
         cout << "No se pudo abrir el archivo" << endl;
     }
 }
-void datos::modificar()
+void datos::modificar(int id)
 {
+    float horaOrdinaria, horasExtras;
+    /*string idAutenticado = getIdEncontrado();
     system("cls");
-    fstream file,file1;
-    int participant_id;
-    int found=0;
-    cout<<"\n-------------------------Modificacion Detalles Persona-------------------------"<<endl;
-    file.open("ParticipantRecord1.txt", ios::in);
-    if(!file) {
-        cout<<"\n\t\t\tNo hay informacion..,";
-        file.close();
-    } else {
-        cout<<"\n Ingrese Id de la personas que quiere modificar: ";
-        cin>>participant_id;
-        file1.open("Record1.txt", ios::app | ios::out);
-        while(file >> id >> nombre >> apellido >> genero >> dia >> mes >> dpi >> telefono >> telefono1 >> numCuenta >> sueldo >> bonificacionIncentiva >> comisiones >> percepciones_extra >> horas_extra >> total_percepciones >> isr >> iggs >> irtra >> prestamos >> deducciones_totales >> sueldo_liquido) {
-			if(participant_id!=id)
-			{
-			     file <<"Id Persona: "<<id<<endl;
+        // Solicita al usuario que ingrese la ID del empleado a modificar
+    cout << "Ingrese la ID del empleado que desea modificar: ";
+    cin >> id;
+
+    // Crea un objeto filestream para trabajar con archivos
+    fstream file;
+
+    // Abre el archivo "ParticipantRecord1.txt" en modo lectura y escritura
+    file.open("ParticipantRecord1.txt", ios::in | ios::out);
+
+    if (!file) {
+        cout << "No se pudo abrir el archivo.";
+        return;
+    }
+
+    bool encontrado = false;
+    int pos = 0;
+    if (idAutenticado == to_string(id)){
+        // Busca el registro con el ID proporcionado
+    while (!file.eof() && !encontrado) {
+        string linea;
+        getline(file, linea);
+
+        // Verifica si la línea contiene el ID buscado
+        if (linea.find("Id Persona: " + idAutenticado) != string::npos) {
+            encontrado = true;
+            break;
+        }
+
+        pos = file.tellg(); // Obtiene la posición actual en el archivo
+    }
+
+    if (encontrado) {
+        // Mueve el puntero de lectura/escritura a la posición del registro encontrado
+        file.seekp(pos, ios::beg);
+
+        // Solicita al usuario que ingrese los nuevos datos del registro
+        // y actualiza los valores de las variables miembro de la estructura datos
+
+        insertarDatos();
+		insertarDatosPuesto();
+		insertarDatosDepartamento();
+        insertarPercepciones();
+		insertarHorasExtras();
+		insertarDeducciones();
+
+        //Calcula el valor de la hora ordinaria y de las horas extras
+        horaOrdinaria = ((((sueldo/30)/8)*1.5));
+        horas_extra = horaOrdinaria * horasExtras;
+
+        //Calcula el total de percepciones, ISR, IIGS, deducciones totales y sueldo líquido
+        total_percepciones = sueldo + bonificacionIncentiva + comisiones + percepciones_extra + horas_extra;
+        isr = total_percepciones * 0.05;
+        iggs = total_percepciones * 0.03;
+        deducciones_totales = isr + iggs + irtra + prestamos;
+        sueldo_liquido = total_percepciones - deducciones_totales;
+
+        // Escribe los nuevos datos en el archivo
+        file <<"Id Persona: "<<id<<endl;
                  file << "|" << setw(20) << "      Datos del trabajador      |" << setw(7) << "           Percepciones Empleados          |" << setw(6) << "           Deducciones Empleados           |" << endl;
 	             file << "| " << "Nombre:          " << nombre << " " << apellido << setw(5) << "| " << endl;
 	             file << "| " << "Puesto:          " << puesto<< setw(5) << "| " << endl;
@@ -509,91 +541,87 @@ void datos::modificar()
                  file << "| " << "TOTAL SUELDO LIQUIDO Q " << sueldo_liquido << setw(93) << "|" << endl;
                  file << "| " << setw(120) << "|" << endl;
                  file << "| " << "Fecha de emision: " << dia << "/" << mes << setw(98) << "|" << endl;
-			}
-			else{
-                int num_empleados;
-                float horaOrdinaria, horasExtras;
-			    cout<<"\t\t\tIngresa Id Persona         : ";
-	            cin>>id;
-	            cout<<"\t\t\tNombre: ";
-	            cin >> nombre;
-                cout << "\t\t\tApellido: ";
-                cin >> apellido;
-                cout << "\t\t\tGenero: ";
-                cin >> genero;
-                cout << "\t\t\tEscriba su DPI: ";
-                cin >> dpi;
-                cout << "\t\t\tEscriba su primer numero de telefono: ";
-                cin >> telefono;
-                cout << "\t\t\tEscriba su segundo numero de telefono: ";
-                cin >> telefono1;
-                cout << "\t\t\tEscriba su numero de cuenta bancaria: ";
-                cin >> numCuenta;
 
-                cout << "\n\t\t\tIngrese el dia actual:" << endl;
-                cin >> dia;
-                while (dia < 1 || mes> 31)
-                {
-               cout << "\t\t\tVerifique que el dia sea correcto" << endl;
-               cin >> dia;
-               }
-               cout << "\n\t\t\tIngrese el mes actual:" << endl;
-               cin >> mes;
-               while (mes < 1 || mes > 12)
-               {
-               cout << "\t\t\tVerifique que el mes sea correcto" << endl;
-               cin >> mes;
-               }
+        cout << "\nSe ha modificado correctamente el registro del empleado con ID: " << id << endl;
+    }
+    }else {
+        cout << "\nNo se encontró ningún registro con el ID proporcionado: " << id << endl;
+    }
 
-              cout << "\t\t\tSueldo: ";
-              cin >> sueldo;
-              cout << "\t\t\tBonificacion Incentiva: "<< bonificacionIncentiva << endl;
-              cout << "\t\t\tComisiones: ";
-              cin >> comisiones;
-              cout << "\t\t\tPercepciones Extraordinarias: ";
-              cin >> percepciones_extra;
-              cout << "\t\t\tHoras Extra: ";
-              cin >> horasExtras;
-              cout << "\t\t\tPrestamos: ";
-              cin >> prestamos;
-              horaOrdinaria = ((((sueldo/30)/8)*1.5));
-              horas_extra = horaOrdinaria * horasExtras;
-              cout << "" << endl;
+    // Cierra el archivo
+    file.close();*/
+    system("cls");
+    fstream file;
+    cout<<"\n-------------------------Modificar Detalles Planilla -------------------------"<<endl;
+       // Abre el archivo en modo de lectura
+    file.open("ParticipantRecord1.txt", ios::in | ios::out);
 
-              total_percepciones = sueldo + bonificacionIncentiva + comisiones + percepciones_extra + horas_extra;
+    // Lee la ID que deseas buscar
+    string id_buscada;
+    cout << "Ingresa la ID que deseas Modificar: ";
+    cin >> id_buscada;
 
-              isr = total_percepciones * 0.05;
-              iggs = total_percepciones * 0.03;
+    // Busca la ID en el archivo
+    bool encontrado = false;
+    int pos = 0;
+    string linea;
+    while (getline(file, linea)) {
+        if (linea.find(id_buscada) != string::npos) {
+            encontrado = true;
+            break;
+        }
+        pos = file.tellg(); // Obtiene la posición actual en el archivo
+    }
 
-              deducciones_totales = isr + iggs + irtra + prestamos;
+    if (encontrado) {
+        // Mueve el puntero de lectura/escritura a la posición del registro encontrado
+        file.seekp(pos, ios::beg);
 
-              sueldo_liquido = total_percepciones - deducciones_totales;
+        // Solicita al usuario que ingrese los nuevos datos del registro
+        // y actualiza los valores de las variables miembro de la estructura datos
 
-			     file1 <<"Id Persona: "<<id<<endl;
-                 file1 << "|" << setw(20) << "      Datos del trabajador      |" << setw(7) << "           Percepciones Empleados          |" << setw(6) << "           Deducciones Empleados           |" << endl;
-	             file1 << "| " << "Nombre:          " << nombre << " " << apellido << setw(5) << "| " << endl;
-	             file1 << "| " << "Puesto:          " << puesto<< setw(5) << "| " << endl;
-                 file1 << "| " << "Departamento:    " << departamento <<setw(5) << "| " << "Sueldo:                           Q " << sueldo << setw(4) << "| " << "ISR:                           Q " <<isr << setw(4) << "|" << endl;
-                 file1 << "| " << "Genero:          " << genero << setw(7) << "| " << "Bonificaciones:                   Q " << bonificacionIncentiva << setw(5) << "| " << "IGGS:                          Q " << iggs << setw(4) << "|" << endl;
-                 file1 << "| " << "DPI:             " << dpi << setw(10) << "| " << "Comisiones:                       Q " << comisiones << setw(5) << "| " << "IRTRA:                         Q " << irtra << setw(8) << "|" << endl;
-                 file1 << "| " << "Telefono 1:      " << telefono << setw(10) << "| " << "Percepciones Extraordinarias:     Q " << percepciones_extra << setw(5) << "| " << "Prestamos:                     Q " << prestamos << setw(7) << "|" << endl;
-                 file1 << "| " << "Telefono 2:      " << telefono1 << setw(10) << "| " << "Horas Extra:                      Q " << horas_extra << setw(6) << "| " << setw(43) << "|" << endl;
-                 file1 << "| " << "Cuenta Bancaria: " << numCuenta << setw(10) << "| " << "Total Percepciones:               Q " << total_percepciones << setw(4) << "| " << "Total Deducciones:             Q " << deducciones_totales << setw(7) << "|" << endl;
-                 file1 << "| " << setw(120) << "|" << endl;
-                 file1 << "| " << "TOTAL SUELDO LIQUIDO Q " << sueldo_liquido << setw(93) << "|" << endl;
-                 file1 << "| " << setw(120) << "|" << endl;
-                 file1 << "| " << "Fecha de emision: " << dia << "/" << mes << setw(98) << "|" << endl;
+        insertarDatos();
+		insertarDatosPuesto();
+		insertarDatosDepartamento();
+        insertarPercepciones();
+		insertarHorasExtras();
+		insertarDeducciones();
 
+        //Calcula el valor de la hora ordinaria y de las horas extras
+        horaOrdinaria = ((((sueldo/30)/8)*1.5));
+        horas_extra = horaOrdinaria * horasExtras;
 
+        //Calcula el total de percepciones, ISR, IIGS, deducciones totales y sueldo líquido
+        total_percepciones = sueldo + bonificacionIncentiva + comisiones + percepciones_extra + horas_extra;
+        isr = total_percepciones * 0.05;
+        iggs = total_percepciones * 0.03;
+        deducciones_totales = isr + iggs + irtra + prestamos;
+        sueldo_liquido = total_percepciones - deducciones_totales;
 
-            }
-		    file1 >> id>>nombre >>apellido >>genero >>dia >>mes >>dpi >>telefono >>telefono1 >>numCuenta >>sueldo >>bonificacionIncentiva >>comisiones >>percepciones_extra >>horas_extra >>total_percepciones >>isr >>iggs >>irtra >>prestamos >>deducciones_totales >>sueldo_liquido;
-		    }
-		    file1.close();
-		    file.close();
-		    remove("ParticipantRecord1.txt");
-		    rename("Record1.txt","ParticipantRecord.txt");
-	        }
+        // Escribe los nuevos datos en el archivo
+        file <<"Id Persona: "<<id<<endl;
+                 file << "|" << setw(20) << "      Datos del trabajador      |" << setw(7) << "           Percepciones Empleados          |" << setw(6) << "           Deducciones Empleados           |" << endl;
+	             file << "| " << "Nombre:          " << nombre << " " << apellido << setw(5) << "| " << endl;
+	             file << "| " << "Puesto:          " << puesto<< setw(5) << "| " << endl;
+                 file << "| " << "Departamento:    " << departamento <<setw(5) << "| " << "Sueldo:                           Q " << sueldo << setw(4) << "| " << "ISR:                           Q " <<isr << setw(4) << "|" << endl;
+                 file << "| " << "Genero:          " << genero << setw(7) << "| " << "Bonificaciones:                   Q " << bonificacionIncentiva << setw(5) << "| " << "IGGS:                          Q " << iggs << setw(4) << "|" << endl;
+                 file << "| " << "DPI:             " << dpi << setw(10) << "| " << "Comisiones:                       Q " << comisiones << setw(5) << "| " << "IRTRA:                         Q " << irtra << setw(8) << "|" << endl;
+                 file << "| " << "Telefono 1:      " << telefono << setw(10) << "| " << "Percepciones Extraordinarias:     Q " << percepciones_extra << setw(5) << "| " << "Prestamos:                     Q " << prestamos << setw(7) << "|" << endl;
+                 file << "| " << "Telefono 2:      " << telefono1 << setw(10) << "| " << "Horas Extra:                      Q " << horas_extra << setw(6) << "| " << setw(43) << "|" << endl;
+                 file << "| " << "Cuenta Bancaria: " << numCuenta << setw(10) << "| " << "Total Percepciones:               Q " << total_percepciones << setw(4) << "| " << "Total Deducciones:             Q " << deducciones_totales << setw(7) << "|" << endl;
+                 file << "| " << setw(120) << "|" << endl;
+                 file << "| " << "TOTAL SUELDO LIQUIDO Q " << sueldo_liquido << setw(93) << "|" << endl;
+                 file << "| " << setw(120) << "|" << endl;
+                 file << "| " << "Fecha de emision: " << dia << "/" << mes << setw(98) << "|" << endl;
+
+        cout << "\nSe ha modificado correctamente el registro del empleado con ID: " << id << endl;
+    }else {
+        cout << "\nNo se encontró ningún registro con el ID proporcionado: " << id << endl;
+    }
+
+    // Cierra el archivo
+    file.close();
+
 }
 
 
@@ -651,7 +679,7 @@ void datos::borrar()
     while (getline(fileIn, line)) {
         if (line.find("Id Persona: " + id) != string::npos) { //Si se encuentra la ID
             encontrado = true; //Cambiar la bandera a verdadero para indicar que se encontró
-            for (int i = 0; i < 12; i++) { //Saltar 10 líneas (que corresponden a la información del registro)
+            for (int i = 0; i < 14; i++) { //Saltar 14 líneas (que corresponden a la información del registro)
                 getline(fileIn, line);
             }
         }
@@ -671,5 +699,8 @@ void datos::borrar()
     else {
         cout << "No se encontró ningún registro con esa ID." << endl;
     }
+}
+string datos::getIdEncontrado() {
+    return idEncontrado;
 }
 

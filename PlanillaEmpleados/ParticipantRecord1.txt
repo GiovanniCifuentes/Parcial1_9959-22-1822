@@ -1,16 +1,19 @@
 
 
-			 Id Persona: 101
+
+
+
+			 IdId Persona: 32761
 |      Datos del trabajador      |           Percepciones Empleados          |           Deducciones Empleados           |
-| Nombre:          Giovanni Cifuentes   | 
-| Puesto:          Jefe   | 
-| Departamento:    Sistemas   | Sueldo:                           Q 18000  | ISR:                           Q 942.6   |
-| Genero:          Masculino     | Bonificaciones:                   Q 250   | IGGS:                          Q 565.56   |
-| DPI:             1816881        | Comisiones:                       Q 251   | IRTRA:                         Q 75       |
-| Telefono 1:      311686        | Percepciones Extraordinarias:     Q 351   | Prestamos:                     Q 151      |
-| Telefono 2:      8631818        | Horas Extra:                      Q 0    |                                           |
-| Cuenta Bancaria: 313813        | Total Percepciones:               Q 18852  | Total Deducciones:             Q 1734.16      |
+| Nombre:          Giovanni Palencia   | 
+| Puesto:          Gerentes   | 
+| Departamento:    Sistemas   | Sueldo:                           Q 186161  | ISR:                           Q 9337.75   |
+| Genero:          Masculino     | Bonificaciones:                   Q 250   | IGGS:                          Q 5602.65   |
+| DPI:             1386318        | Comisiones:                       Q 313   | IRTRA:                         Q 75       |
+| Telefono 1:      215456325        | Percepciones Extraordinarias:     Q 31   | Prestamos:                     Q 51      |
+| Telefono 2:      21546532        | Horas Extra:                      Q -6.60899e-14    |                                           |
+| Cuenta Bancaria: 31561        | Total Percepciones:               Q 186755  | Total Deducciones:             Q 15066.4      |
 |                                                                                                                        |
-| TOTAL SUELDO LIQUIDO Q 17117.8                                                                                            |
+| TOTAL SUELDO LIQUIDO Q 171689                                                                                            |
 |                                                                                                                        |
-| Fecha de emision: 10/2                                                                                                 |
+| Fecha de emision: 18/5                                                                                                 |

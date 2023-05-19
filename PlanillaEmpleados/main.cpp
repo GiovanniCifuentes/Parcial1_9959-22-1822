@@ -4,6 +4,7 @@
 #include "datos.h"
 #include "Usuarios.h"
 #include "bitacora.h"
+#include "aplicaciones.h"
 
 using namespace std;
 
@@ -12,11 +13,10 @@ void menuCatalogos();
 void menuProcesos();
 void menuInformes();
 
+Usuario ingreso;
 
 
 int main() {
-    string usuario, contrasena;
-    Usuario ingreso(usuario, contrasena);
     bool usuarioCorrecto = ingreso.verificarUsuario();
 
     if (usuarioCorrecto){
@@ -28,11 +28,12 @@ int main() {
 
 void menu()
 {
+
     fstream file2;
     // Obtiene el tiempo actual
     time_t tiempoActual = time(0);
 
-    // Convierte el tiempo actual a una estructura tm local
+    //Convierte el tiempo actual a una estructura tm local
     tm* fechaHoraLocal = localtime(&tiempoActual);
 
     file2.open("Bitacora.txt", ios::app | ios::out);
@@ -42,7 +43,8 @@ void menu()
 	do
     {
 	system("cls");
-
+	string usuarioAutenticado = ingreso.getUsuarioAutenticado();
+    cout << "Usuario Autenticado: " <<usuarioAutenticado<< "\n"<< endl; // Mostrar el nombre de usuario autenticado
     cout <<"\t\t\t----------------------------------"<<endl;
     cout <<"\t\t\t |BIENVENIDO AL MENU PRINCIPAL|"<<endl;
     cout <<"\t\t\t----------------------------------"<<endl;
@@ -58,12 +60,18 @@ void menu()
     cin>>choice;
     switch(choice){
     case 1:
+        system("cls");
+        cout << "Usuario Autenticado: " <<usuarioAutenticado<< "\n"<< endl; // Mostrar el nombre de usuario autenticado
         menuCatalogos();
         break;
     case 2:
+        system("cls");
+        cout << "Usuario Autenticado: " <<usuarioAutenticado<< "\n"<< endl; // Mostrar el nombre de usuario autenticado
         menuProcesos();
         break;
     case 3:
+        system("cls");
+        cout << "Usuario Autenticado: " <<usuarioAutenticado<< "\n"<< endl; // Mostrar el nombre de usuario autenticado
         menuInformes();
         break;
     case 4:
@@ -98,25 +106,18 @@ void menuCatalogos()
     float sueldo_liquido;
     datos empleado(id, nombre, apellido,genero, puesto, departamento, dia, mes, dpi, telefono, telefono1, numCuenta, sueldo, comisiones, percepciones_extra, horas_extra, isr);
 
-    string usuario, contrasena;
-    Usuario ingreso(usuario, contrasena);
-
-    fstream file2;
-    file2.open("Bitacora.txt", ios::app | ios::out);
-
-    int accion5 = 7006;
+    Usuario ingreso;
 
     bool salir = false;
     int choice;
     char x;
 	do
     {
-	system("cls");
-
+    system("cls");
     cout <<"\t\t\t----------------------------------"<<endl;
     cout <<"\t\t\t|BIENVENIDO AL MENU DE CATALOGO|"<<endl;
     cout <<"\t\t\t----------------------------------"<<endl;
-	cout<<"\t\t\t 1. Ingreso Datos Para Plantilla"<<endl;
+	cout<<"\t\t\t 1. Ingreso Datos Para Planilla"<<endl;
 	cout<<"\t\t\t 2. Ingreso Datos Para Usuarios Nuevos"<<endl;
 	cout<<"\t\t\t 3. Exit"<<endl;
 
@@ -137,7 +138,8 @@ void menuCatalogos()
     		ingreso.ingresarUsuarios(); // Se llama al método para ingresar nuevos usuarios
     		cout<<"\n\t\t\t Agrega otra persona(Y,N): ";
     		cin>>x; // Se pregunta al usuario si desea agregar otra persona
-    		file2<<"\t\t\tAccion: Ingreso Un Usuario - " <<accion5<<"\n"<<endl;
+    		bitacora metodoAccion;
+    		metodoAccion.insertarAccion("706", "ING USUARIO");
 		}while(x=='y'||x=='Y'); // Se repite el ciclo mientras la respuesta del usuario sea afirmativa
 		break;
 	case 3:
@@ -147,7 +149,6 @@ void menuCatalogos()
 	}
 	getch();
     }while(choice!= 3);
-    file2.close();
 }
 
 void menuProcesos()
@@ -170,27 +171,29 @@ void menuProcesos()
     datos empleado(id, nombre, apellido,genero, puesto, departamento, dia, mes, dpi, telefono, telefono1, numCuenta, sueldo, comisiones, percepciones_extra, horas_extra, isr);
 
 
-    string usuario, contrasena;
-    Usuario ingreso(usuario, contrasena);
+    Usuario ingreso;
 
     bitacora consulta;
+
+    aplicaciones Aplicaciones;
+
 
     bool salir = false;
     int choice;
 	do
     {
-	system("cls");
-
+    system("cls");
     cout <<"\t\t\t----------------------------------"<<endl;
     cout <<"\t\t\t|BIENVENIDO AL MENU DE PROCESOS|"<<endl;
     cout <<"\t\t\t----------------------------------"<<endl;
 	cout<<"\t\t\t 1. Proceso Datos Plantilla"<<endl;
 	cout<<"\t\t\t 2. Proceso Datos Usuarios"<<endl;
-	cout<<"\t\t\t 3. Consulta de Bitacora"<<endl;
-	cout<<"\t\t\t 4. Exit"<<endl;
+	cout<<"\t\t\t 3. Proceso De Aplicaciones"<<endl;
+	cout<<"\t\t\t 4. Consulta de Bitacora"<<endl;
+	cout<<"\t\t\t 5. Exit"<<endl;
 
 	cout<<"\t\t\t-------------------------------"<<endl;
-	cout<<"\t\t\tOpcion a escoger:[1/2/3/4]"<<endl;
+	cout<<"\t\t\tOpcion a escoger:[1/2/3/4/5]"<<endl;
 	cout<<"\t\t\t-------------------------------"<<endl;
 	cout<<"Ingresa tu Opcion: ";
     cin>>choice;
@@ -204,17 +207,19 @@ void menuProcesos()
 		ingreso.menuUsuarios();
 		break;
     case 3:
-		consulta.desplegarBitacora();
+        consulta.desplegarBitacora();
 		system("pause");
 		menuProcesos();
 		break;
-	case 4:
+    case 4:
+        Aplicaciones.menu();
+	case 5:
 	    menu();
     default:
         cout<<"\t\t\t\nSaliendo del menu";
 	}
 	getch();
-    }while(choice!= 3);
+    }while(choice!= 5);
 }
 void menuInformes()
 {
@@ -235,22 +240,16 @@ void menuInformes()
     float sueldo_liquido;
     datos empleado(id, nombre, apellido,genero, puesto, departamento, dia, mes, dpi, telefono, telefono1, numCuenta, sueldo, comisiones, percepciones_extra, horas_extra, isr);
 
-    string usuario, contrasena;
-    Usuario ingreso(usuario, contrasena);
+    Usuario ingreso;
 
-    fstream file2;
-    file2.open("Bitacora.txt", ios::app | ios::out);
-
-    int accion12 = 7022;
-    int accion13 = 7023;
+    bitacora metodoAccion;
 
     bool salir = false;
     int choice;
     char x;
 	do
     {
-	system("cls");
-
+    system("cls");
     cout <<"\t\t\t----------------------------------"<<endl;
     cout <<"\t\t\t|BIENVENIDO AL MENU DE INFORMES  |"<<endl;
     cout <<"\t\t\t----------------------------------"<<endl;
@@ -268,11 +267,11 @@ void menuInformes()
     {
     case 1:
         empleado.desplegar();
-        file2<<"\t\t\tAccion: Informes Datos para Plantilla - " <<accion12<<"\n"<<endl;
+        metodoAccion.insertarAccion("7022", "INF. PLANILLA");
 		break;
 	case 2:
 	    ingreso.desplegarUsurios();
-	    file2<<"\t\t\tAccion: Informes Datos para Usuarios - " <<accion13<<"\n"<<endl;
+        metodoAccion.insertarAccion("7023", "INF. USUARIOS");
 		break;
 	case 3:
 	    menu();
@@ -281,5 +280,4 @@ void menuInformes()
 	}
 	getch();
     }while(choice!= 3);
-    file2.close();
 }
