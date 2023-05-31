@@ -172,3 +172,51 @@
 1685492571 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\prograuno2k23\juegos\robot - final\include\gamemap3.h
 	"mapcell.h"
 
+1685493006 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\robot - final\main.cpp
+	<iostream>
+	"player.h"
+	"mapcell.h"
+	"gamemap.h"
+	"gamemap2.h"
+	"gamemap3.h"
+
+1685144453 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\robot - final\include\player.h
+
+1685149165 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\robot - final\include\mapcell.h
+
+1685491172 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\robot - final\include\gamemap.h
+	"mapcell.h"
+
+1685492361 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\robot - final\include\gamemap2.h
+	"mapcell.h"
+
+1685492571 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\robot - final\include\gamemap3.h
+	"mapcell.h"
+
+1685492458 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\robot - final\src\gamemap.cpp
+	"gamemap.h"
+	"player.h"
+	<iostream>
+	<fstream>
+
+1685493006 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\robot - final\src\gamemap2.cpp
+	"gamemap2.h"
+	"player.h"
+	<iostream>
+	<fstream>
+
+1685493094 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\robot - final\src\gamemap3.cpp
+	"gamemap3.h"
+	"player.h"
+	<iostream>
+	<fstream>
+
+1685149147 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\robot - final\src\mapcell.cpp
+	"mapcell.h"
+	<iostream>
+
+1685493094 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\robot - final\src\player.cpp
+	"player.h"
+	<iostream>
+	<fstream>
+
