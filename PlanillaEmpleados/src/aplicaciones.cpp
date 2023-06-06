@@ -86,6 +86,7 @@ void aplicaciones::insertar()
 	file.close();
 	bitacora auditoria;
 	auditoria.insertarAccion("7024", "INS APLICACION");
+	system("pause");
 }
 void aplicaciones::desplegar()
 {
@@ -120,6 +121,7 @@ void aplicaciones::desplegar()
 	file.close();
     bitacora auditoria;
     auditoria.insertarAccion("7025", "SEL APLICACION");
+    system("pause");
 }
 void aplicaciones::modificar()
 {

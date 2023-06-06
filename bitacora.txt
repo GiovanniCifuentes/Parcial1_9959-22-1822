@@ -1,0 +1,80 @@
+commit 0624924fd645a2736eaa72783cbde8b420f88923
+Author: Giovanni Cifuentes <giovannicifuentescss20@gmail.com>
+Date:   Tue May 30 21:52:49 2023 -0600
+
+    Agregando niveles al programa de Robot
+
+commit 2b7e45040d828f48da6373e487a391d4636d45a0
+Author: Giovanni Cifuentes <giovannicifuentescss20@gmail.com>
+Date:   Tue May 30 18:45:12 2023 -0600
+
+    Agregando Niveles Al Programa de Robot - Final
+
+commit 383e5854b5f3490c489285cda4ab60c0f7a25e82
+Author: Giovanni Cifuentes <giovannicifuentescss20@gmail.com>
+Date:   Thu May 18 18:23:40 2023 -0600
+
+    Subiendo bitacora y aplicaciones para la planilla de nominas
+
+commit fd3796864d4b12faf3bc3c41fdd0a12d1f9713f0
+Author: Giovanni Cifuentes <giovannicifuentescss20@gmail.com>
+Date:   Sat May 13 19:56:50 2023 -0600
+
+    Subiendo Programa de Planilla modificado
+
+commit 8c0abd28c6c82bb46e4879fd39dd534137753643
+Author: Giovanni Cifuentes <giovannicifuentescss20@gmail.com>
+Date:   Mon Apr 17 17:46:35 2023 -0600
+
+    Subiendo programa de Plantilla de Sueldos modificado con submenus
+
+commit a74434a84431c85925a3b0886a69960f348e94fe
+Author: Giovanni Cifuentes <giovannicifuentescss20@gmail.com>
+Date:   Fri Apr 14 19:55:39 2023 -0600
+
+    Subiendo Modificacion Minas
+
+commit 26bdaf4125118f492aaa159917cb686410cd44df
+Merge: 06d3968 ca66606
+Author: Giovanni Cifuentes <giovannicifuentescss20@gmail.com>
+Date:   Tue Apr 11 20:03:57 2023 -0600
+
+    Merge branch 'main' of https://github.com/GiovanniCifuentes/Parcial1_9959-22-1822
+
+commit 06d3968d95cba6e0a71401506e692a40755a1a50
+Author: Giovanni Cifuentes <giovannicifuentescss20@gmail.com>
+Date:   Tue Apr 11 20:03:45 2023 -0600
+
+    Subiendo Prototipo de Plantilla de Sueldos
+
+commit 69272649d876933e0384fb9c80eb093605c456b4
+Author: Giovanni Cifuentes <giovannicifuentescss20@gmail.com>
+Date:   Mon Apr 10 19:53:01 2023 -0600
+
+    delete Tablero.cpp
+
+commit 2ee813d0e93d2fecebb6db5674de4b880a72b175
+Author: Giovanni Cifuentes <giovannicifuentescss20@gmail.com>
+Date:   Mon Apr 10 19:49:04 2023 -0600
+
+    Subiendo las implementaciones del juego de busca minas
+
+commit 2d11469d03f36becfdd5d73252d292b52d0cfb1c
+Author: Giovanni Cifuentes <giovannicifuentescss20@gmail.com>
+Date:   Fri Mar 17 14:16:50 2023 -0600
+
+    subiendo archivos y proyecto de plantilla de sueldos
+
+commit ca666064ff493490cb2c1e7237bf3b53d5784b43
+Author: GiovanniCifuentes <123000363+GiovanniCifuentes@users.noreply.github.com>
+Date:   Wed Mar 8 20:56:53 2023 -0600
+
+    Update main.cpp
+
+commit 97e840f69eab2f20a766e3bb443db2c9d294255a
+Author: GiovanniCifuentes <123000363+GiovanniCifuentes@users.noreply.github.com>
+Date:   Wed Mar 8 20:55:46 2023 -0600
+
+
+
+    Initial commit

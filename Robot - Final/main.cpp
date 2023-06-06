@@ -36,7 +36,7 @@ int main()
       //Actualizar información del jugador en el mapa
       if(map.setPlayerCell(hero.getValueX(), hero.getValueY()))
       {
-     //   system("cls");
+        //system("cls");
         map.draw();
       } else
       {
@@ -75,7 +75,6 @@ int main()
 
     }
     }
-
     if (map2.isGameOver==true){
     cout << "---------------------------------------------------------------------------------------\n";
     cout << " _______ ______ _____   _____ ______ _____     _   _ _______      ________ _      \n";

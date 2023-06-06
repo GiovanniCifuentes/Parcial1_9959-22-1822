@@ -73,3 +73,77 @@
 1684448265 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\ejercicios\robotjuego\planillaempleados\include\aplicaciones.h
 	<iostream>
 
+1686083876 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\planillaempleados\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	"datos.h"
+	"Usuarios.h"
+	"bitacora.h"
+	"aplicaciones.h"
+
+1684450066 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\planillaempleados\include\datos.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1684376246 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\planillaempleados\include\usuarios.h
+	<iostream>
+	<fstream>
+	<string>
+
+1684447607 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\planillaempleados\include\bitacora.h
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1684448265 c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\planillaempleados\include\aplicaciones.h
+	<iostream>
+
+1686083980 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\planillaempleados\src\aplicaciones.cpp
+	"aplicaciones.h"
+	"Usuarios.h"
+	"bitacora.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1684447969 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\planillaempleados\src\bitacora.cpp
+	"bitacora.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1684447735 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\planillaempleados\src\usuarios.cpp
+	"Usuarios.h"
+	"bitacora.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+
+1684452087 source:c:\users\steven cifuentes\documents\universidad 2022\3er semestre\programacion i\ejercicios o tareas de git\parcial1_9959-22-1822\planillaempleados\src\datos.cpp
+	"datos.h"
+	"Usuarios.h"
+	"bitacora.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<cstdlib>
+	<conio.h>
+	<iomanip>
+

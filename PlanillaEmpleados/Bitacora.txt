@@ -5,3 +5,186 @@
 
 
 
+
+-------------------------------------------------Bitacora de Ingreso de Usuario---------------------------------------------
+
+
+
+			LOG
+
+			Nombre del usuario         : Giovanni
+
+			Fecha en que Inicio Cesion: 31/5/2023
+
+			Hora en que entro al programa: 8:45:29
+
+
+-------------------------------------------------Bitacora de Ingreso de Usuario---------------------------------------------
+
+
+
+			LOG
+
+			Nombre del usuario         : Giovanni
+
+			Fecha en que Inicio Cesion: 6/6/2023
+
+			Hora en que entro al programa: 14:25:16
+
+			Aplicacion: 7021, Accion:Despliege de Bitacora
+
+			Aplicacion: 7021, Accion:Despliege de Bitacora
+
+			Aplicacion: 7008, Accion:SEL PLANILLA
+
+			Aplicacion: 7022, Accion:INF. PLANILLA
+
+			Aplicacion: 7023, Accion:INF. USUARIOS
+
+			Aplicacion: 7021, Accion:Despliege de Bitacora
+
+			Hora en que salio del programa: 14:26:45
+
+
+-------------------------------------------------Bitacora de Ingreso de Usuario---------------------------------------------
+
+
+
+			NLOG
+
+			Nombre del usuario         : faf
+
+			Contraseña con el que intento entrar: 123456789
+
+			Fecha en que Intento Inciar Cesion: 6/6/2023
+
+			Hora en que Intento Entrar al Programa: 14:28:11
+
+
+-------------------------------------------------Bitacora de Ingreso de Usuario---------------------------------------------
+
+
+
+			LOG
+
+			Nombre del usuario         : Giovanni
+
+			Fecha en que Inicio Cesion: 6/6/2023
+
+			Hora en que entro al programa: 14:28:20
+
+			Aplicacion: 7021, Accion:Despliege de Bitacora
+
+			Hora en que salio del programa: 14:28:38
+
+
+-------------------------------------------------Bitacora de Ingreso de Usuario---------------------------------------------
+
+
+
+			LOG
+
+			Nombre del usuario         : Giovanni
+
+			Fecha en que Inicio Cesion: 6/6/2023
+
+			Hora en que entro al programa: 14:32:59
+
+			Hora en que salio del programa: 14:32:59
+
+
+-------------------------------------------------Bitacora de Ingreso de Usuario---------------------------------------------
+
+
+
+			LOG
+
+			Nombre del usuario         : Giovanni
+
+			Fecha en que Inicio Cesion: 6/6/2023
+
+			Hora en que entro al programa: 14:34:28
+
+			Hora en que salio del programa: 14:34:28
+
+
+-------------------------------------------------Bitacora de Ingreso de Usuario---------------------------------------------
+
+
+
+			NLOG
+
+			Nombre del usuario         : juan
+
+			Contraseña con el que intento entrar: 456
+
+			Fecha en que Intento Inciar Cesion: 6/6/2023
+
+			Hora en que Intento Entrar al Programa: 14:35:5
+
+
+-------------------------------------------------Bitacora de Ingreso de Usuario---------------------------------------------
+
+
+
+			LOG
+
+			Nombre del usuario         : Giovanni
+
+			Fecha en que Inicio Cesion: 6/6/2023
+
+			Hora en que entro al programa: 14:38:17
+
+			Aplicacion: 7021, Accion:Despliege de Bitacora
+
+			Aplicacion: 7025, Accion:SEL APLICACION
+
+			Aplicacion: 7025, Accion:SEL APLICACION
+
+			Aplicacion: 7025, Accion:SEL APLICACION
+
+			Aplicacion: 7025, Accion:SEL APLICACION
+
+			Aplicacion: 7025, Accion:SEL APLICACION
+
+
+-------------------------------------------------Bitacora de Ingreso de Usuario---------------------------------------------
+
+
+
+			LOG
+
+			Nombre del usuario         : Giovanni
+
+			Fecha en que Inicio Cesion: 6/6/2023
+
+			Hora en que entro al programa: 14:39:54
+
+
+-------------------------------------------------Bitacora de Ingreso de Usuario---------------------------------------------
+
+
+
+			LOG
+
+			Nombre del usuario         : Giovanni
+
+			Fecha en que Inicio Cesion: 6/6/2023
+
+			Hora en que entro al programa: 14:40:28
+
+
+-------------------------------------------------Bitacora de Ingreso de Usuario---------------------------------------------
+
+
+
+			LOG
+
+			Nombre del usuario         : Giovanni
+
+			Fecha en que Inicio Cesion: 6/6/2023
+
+			Hora en que entro al programa: 14:41:4
+
+			Aplicacion: 7021, Accion:Despliege de Bitacora
+

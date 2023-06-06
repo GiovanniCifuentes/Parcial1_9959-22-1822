@@ -17,11 +17,36 @@ Usuario ingreso;
 
 
 int main() {
-    bool usuarioCorrecto = ingreso.verificarUsuario();
 
-    if (usuarioCorrecto){
-        menu();
-    }
+
+    int opcion;
+    do{
+        system("cls");
+        cout <<"\t\t\t----------------------------------"<<endl;
+        cout <<"\t\t\t |           Bienvenido          |"<<endl;
+        cout <<"\t\t\t----------------------------------"<<endl;
+        cout<<"\t\t\t 1. Autenticacion"<<endl;
+	    cout<<"\t\t\t 2. Salir"<<endl;
+	    cout<<"Ingresa tu Opcion: ";
+        cin>>opcion;
+        switch(opcion)
+        {
+        case 1:
+        {
+            bool usuarioCorrecto = ingreso.verificarUsuario();
+            if (usuarioCorrecto){
+            menu();
+            }
+            break;
+        }
+        case 2:
+            cout<<"\n\n\n\t\t\tGracias por usar nuestro programa!!!\n\n\n"<<endl;
+            system("pause");
+            exit(0);
+            break;
+        }
+    }while(opcion!= 2);
+
 
     return 0;
 }
@@ -76,7 +101,7 @@ void menu()
         break;
     case 4:
 	    file2 << "\t\t\tHora en que salio del programa: " << fechaHoraLocal->tm_hour << ":" << fechaHoraLocal->tm_min << ":" << fechaHoraLocal->tm_sec <<"\n" << endl;
-        exit(0);
+	    main();
 	default:
 		cout<<"\n\t\t\t Opcion invalida...Por favor prueba otra vez..";
         break;
@@ -113,7 +138,6 @@ void menuCatalogos()
     char x;
 	do
     {
-    system("cls");
     cout <<"\t\t\t----------------------------------"<<endl;
     cout <<"\t\t\t|BIENVENIDO AL MENU DE CATALOGO|"<<endl;
     cout <<"\t\t\t----------------------------------"<<endl;
@@ -182,7 +206,6 @@ void menuProcesos()
     int choice;
 	do
     {
-    system("cls");
     cout <<"\t\t\t----------------------------------"<<endl;
     cout <<"\t\t\t|BIENVENIDO AL MENU DE PROCESOS|"<<endl;
     cout <<"\t\t\t----------------------------------"<<endl;
@@ -249,7 +272,6 @@ void menuInformes()
     char x;
 	do
     {
-    system("cls");
     cout <<"\t\t\t----------------------------------"<<endl;
     cout <<"\t\t\t|BIENVENIDO AL MENU DE INFORMES  |"<<endl;
     cout <<"\t\t\t----------------------------------"<<endl;
